@@ -6,16 +6,7 @@ chmod +x qt-opensource-linux-x64-5.9.0.run
 sudo ./qt-opensource-linux-x64-5.9.0.run --platform minimal --verbose --script qt_script.qs
 
 echo "Install Additional Packages"
-sudo apt-get install build-essential
-sudo apt-get install xorg-dev
-sudo apt-get install cmake
-sudo apt-get install cmake-data
-sudo apt-get install libblas-dev
-sudo apt-get install liblapack-dev
-sudo apt-get install mesa-common-dev
-sudo apt-get install libglu1-mesa-dev -y
-sudo apt-get install libfontconfig1
-sudo apt-get install libeigen3-dev
+sudo apt-get install build-essential xorg-dev cmake cmake-data libblas-dev liblapack-dev mesa-common-dev libglu1-mesa-dev -y libfontconfig1 libeigen3-dev
 
 mkdir build
 cd build

@@ -1,5 +1,6 @@
 function Controller() {
     installer.autoRejectMessageBoxes();
+    installer.setMessageBoxAutomaticAnswer( "overwriteTargetDirectory", QMessageBox.Yes )
     installer.installationFinished.connect(function() {
         gui.clickButton(buttons.NextButton);
     })
