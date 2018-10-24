@@ -105,7 +105,7 @@ set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 set(LIBIGL_INCLUDE_PATH ${PROJECT_SOURCE_DIR}/ThirdParty/libigl/include CACHE FILEPATH "Root include directory for libigl")
 
 #Spectra
-set(SPECTRA_INCLUDE_PATH ${PROJECT_SOURCE_DIR}/ThirdParty/Spectra/include CACHE FILEPATH "Root include directory for SPECTRA")
+set(SPECTRA_INCLUDE_PATH ${PROJECT_SOURCE_DIR}/ThirdParty/Spectra/include/Spectra CACHE FILEPATH "Root include directory for SPECTRA")
 set(GAUSS_INCLUDE_DIR ${GAUSS_INCLUDE_DIR} ${SPECTRA_INCLUDE_PATH} CACHE INTERNAL "" FORCE)
 
 #directories for FCL and dependencies
