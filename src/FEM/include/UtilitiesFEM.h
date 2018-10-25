@@ -23,26 +23,6 @@ namespace Gauss {
         
         //linear modal analysis
         //returns a pair wherein the first value is a matrix of eigenvectors and the second is vector of corresponding vibrational frequencies
-        template<typename World>
-        auto linearModalAnalysis(World &world, unsigned int numModes) {
-            
-            //build mass and stiffness matrices
-            AssemblerParallel<double, AssemblerEigenSparseMatrix<double> > mass;
-            AssemblerParallel<double, AssemblerEigenSparseMatrix<double> > stiffness;
-            
-            getMassMatrix(mass, world);
-            getStiffnessMatrix(stiffness, world);
-            
-            auto eigs = generalizedEigenvalueProblem((*stiffness), (*mass), numModes,   1e-6);
-            
-            //convert to vibrational frequencies
-            //hack because generalised eignvalue solver only returns real values
-            for(unsigned int ii=0; ii<eigs.second.rows(); ++ii) {
-                eigs.second[ii] = std::sqrt(std::fabs(eigs.second[ii]));
-            }
-            
-            return eigs;
-        }
         
         //functor for getting position of a DOF
         template <typename DataType, typename DOF>
